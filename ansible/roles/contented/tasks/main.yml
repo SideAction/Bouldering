@@ -15,10 +15,10 @@
 - name: Install depenedent go packages
   command: dep ensure
   args: 
-    chdir: /home/vagrant/go/src/contented/
-    creates: /home/vagrant/go/src/contented/vendor/github.com
+    chdir: /home/vagrant/go/src/bouldering/
+    creates: /home/vagrant/go/src/bouldering/vendor/github.com
 
 - name: Actually build the http binary
   shell: /usr/local/go/bin/go build
   args:
-    chdir: /home/vagrant/go/src/contented/
+    chdir: /home/vagrant/go/src/bouldering/

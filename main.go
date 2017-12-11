@@ -10,11 +10,11 @@ import (
     "bouldering/web"
 )
 
-var dir string
-var port string = "8000"
+var dir string = "."
+var port string = "8090"
 func main() {
-    flag.StringVar(&dir, "dir", ".", "Directory to serve files from")
-    flag.StringVar(&port, "port", "8000", "Port to run the webserver.")
+    flag.StringVar(&dir, "dir", dir, "Directory to serve files from")
+    flag.StringVar(&port, "port", port, "Port to run the webserver.")
     flag.Parse()
 
     fmt.Println("Using this directory As the static root: ", dir, port, "WAT")
@@ -23,12 +23,12 @@ func main() {
 	web.SetupContented(router, dir)
 	web.SetupStatic(router, "./static")
 
+    // Good practice: enforce timeouts for servers you create!
     srv := &http.Server{
         Handler:      router,
-		Addr:         "127.0.0.1:" + port,
-        // Good practice: enforce timeouts for servers you create!
-		WriteTimeout: 18 * time.Second,
-		ReadTimeout:  18 * time.Second,
+	Addr:         ":" + port,
+	WriteTimeout: 18 * time.Second,
+	ReadTimeout:  18 * time.Second,
     }
     log.Fatal(srv.ListenAndServe())
     http.Handle("/", router)
