@@ -7,7 +7,7 @@ import (
     "net/http"
     "io/ioutil"
     "github.com/gorilla/mux"
-    "contented/utils"
+    "bouldering/utils"
 )
 
 type PreviewResults struct{

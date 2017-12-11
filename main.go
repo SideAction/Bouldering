@@ -7,7 +7,7 @@ import (
     "log"
     "net/http"
     "github.com/gorilla/mux"
-    "contented/web"
+    "bouldering/web"
 )
 
 var dir string

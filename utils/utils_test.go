@@ -2,12 +2,13 @@ package utils
 
 import "testing"
 
-var testDir = "./../mocks/content"
+var testDir = "./../static/content"
 
 func TestGetDirContents(t *testing.T) {
     lookup := GetDirectoriesLookup(testDir)
 
-    var dirs = []string{"dir1", "dir2", "dir3", "screens"}
+    var dirs = []string{"office", "splash", "starwars"}
+
     count := 0
     for _, dir := range dirs {
         if !lookup[dir] {
@@ -16,7 +17,7 @@ func TestGetDirContents(t *testing.T) {
             count++
         }
     }
-    if (count != 4) {
+    if (count != 3) {
         t.Error("Failed to actually test the API")
     }
 }
@@ -24,13 +25,13 @@ func TestGetDirContents(t *testing.T) {
 
 func TestGetSpecificDir(t *testing.T) {
 	var count = 2
-	files := GetDirContents(testDir + "/dir3", 2, "mocks")
+	files := GetDirContents(testDir + "/splash", 2, "mocks")
 
-	if (len(files.Contents) != 2) {
+	if (len(files.Contents) != 1) {
 		t.Errorf("Did not limit the directory length, wanted %d found %d", count, len(files.Contents))
 	}
 
-	files = GetDirContents(testDir + "/dir3", 10, "mocks")
+	files = GetDirContents(testDir + "/office", 10, "mocks")
 	if (len(files.Contents) < 3) {
 		t.Error("There are more test files in this directory than 3")
 	}
