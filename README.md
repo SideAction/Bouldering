@@ -10,9 +10,11 @@ Setup requires either getting GoLang and NPM setup on a box (recommended).   Hom
 Or getting Oracle VirtualBox, and ansible working on command line
 * Setup virtualenv for your python http://sourabhbajaj.com/mac-setup/Python/virtualenv.html
 * Install ansible with the virtual env or https://hvops.com/articles/ansible-mac-osx/
+```
     $virtualenv -p python3 env; 
     $source env/bin/activiate
     $pip install ansible 
+```
 * Install VirtualBox https://www.virtualbox.org/
 
 ### Setup the server with Vagrant 
