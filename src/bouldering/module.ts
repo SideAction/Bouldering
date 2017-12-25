@@ -2,6 +2,9 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 
+import {Route} from './route';
+import {BigRock} from './big_rock';
+
 import {MapsModule} from './../maps/module';
 import {HomeCmp} from './home_cmp';
 import {BoulderCmp} from './boulder_cmp';

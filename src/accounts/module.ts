@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 
 import {AccountsCmp} from './accounts_cmp';
+import {Ape} from './ape';
 
 @NgModule({
   imports: [BrowserModule, HttpModule],
