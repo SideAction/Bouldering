@@ -10,7 +10,7 @@ export class BigRock {
     constructor(jsonData: any) {
         this.assign(jsonData);
     }
- 
+
     public assign(original) {
         if (!_.isEmpty(original)) {
             Object.assign(this, original);

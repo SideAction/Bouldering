@@ -15,11 +15,11 @@ export class Route {
     constructor(jsonData: any) {
         this.assign(jsonData);
     }
- 
+
     public assign(original) {
         if (!_.isEmpty(original)) {
             Object.assign(this, original);
             this.original = JSON.stringify(original);
         }
-    } 
+    }
 }
